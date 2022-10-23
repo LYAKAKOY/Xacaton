@@ -9,20 +9,19 @@
 
                     </div>
                     <form class="form__auth" action="#" method="post">
-                        <div class="form__login form__item">
-                            <label class="form__text"><i class='bx bx-user'> </i> Логин</label>
-                            <input type="login" class="input__field" name="auth_login" placeholder="Kolhozniy_Pank" required >
-                        </div>
+                        {% csrf_token %}
                         <div class="form__password form__item">
-                            <label class="form__text"><i class='bx bx-lock-alt'></i> Пароль</label>
-                            <input type="password" class="input__field" name="auth_pass" placeholder="GoodPassword" required >
+                            {% for f in form %}
+                            <label class="form__text" for="{{ f.id_for_label }}"><i class='bx bx-lock-alt'></i> {{ f.label }}</label>
+                            {{ f }}
+                            {% endfor %}
                             <div class="checkbox_container">
                                 <input type="checkbox" class="remember_checkbox" id="remember" name="drone" value="huey" >
                                 <label for="remember" class="remember">Запомнить меня</label>
                             </div>
                             <button class="form__auth-button button" type="submit" name="form_auth_submit">Войти</button>
                             <div class="useful_links">
-                                <a href="registration.html" class="where_account">Нет аккаунта?</a>
+                                <a href="{% url 'reg' %}" class="where_account">Нет аккаунта?</a>
                                 <a href="#" class="where_account">Забыли пароль?</a>
                             </div>
 

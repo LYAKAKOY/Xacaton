@@ -6,6 +6,8 @@ from django.dispatch import receiver
 
 @receiver(post_save, sender=User)
 def create_UserData(sender, instance, created, **kwargs):
+    """Обработка создания пользователя и создание его данных"""
+
     if created:
         UserData.objects.create(user=instance)
 

@@ -9,13 +9,14 @@
 
                     </div>
                     <form class="form__auth" action="#" method="post">
+                        {% csrf_token %}
                         <div class="form__password form__item">
                             {% for f in form %}
                             <label class="form__text" for="{{ f.id_for_label }}"><i class='bx bx-lock-alt'></i> {{f.label}}</label>
                             {{ f }}
                             {% endfor %}
                             <button class="form__auth-button button" type="submit" name="form_auth_submit">Регистрация</button>
-                            <a href="login.html" class="where_account">Есть аккаунт?</a>
+                            <a href="{% url 'log' %}" class="where_account">Есть аккаунт?</a>
                         </div>
                     </form>
 
