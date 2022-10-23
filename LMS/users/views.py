@@ -1,4 +1,5 @@
-from django.contrib.auth.views import LoginView, PasswordResetView
+from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetConfirmView, PasswordResetDoneView, \
+    PasswordResetCompleteView
 from django.views.generic import CreateView
 from .forms import RegisterForm, AuntificationUserForm
 from django.urls import reverse_lazy
@@ -26,4 +27,20 @@ class ChangePasswordUser(PasswordResetView):
 
     template_name = 'users/password_reset.html'
 
-class
+
+class ChangePasswordUserConfirm(PasswordResetConfirmView):
+    """Подтверждение изменения пароля"""
+
+    template_name = 'users/password_reset_confirm.html'
+
+
+class PasswordUserDone(PasswordResetDoneView):
+    """Сообщение об отправке письма на почту"""
+
+    template_name = 'users/password_reset_done.html'
+
+
+class ChangePasswordUserComplete(PasswordResetCompleteView):
+    """Сообщение о статусе изменение пароля"""
+
+    template_name = 'users/password_reset_complete.html'
