@@ -1,0 +1,316 @@
+    body, html {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+
+        font-size: 15px;
+        line-height: 1.6;
+        color: #0e0e0e;
+        height: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        background: #ff422506;
+    }
+
+    *,
+    *:after,
+    *:before {
+        box-sizing: border-box;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+    }
+
+    .wrapper {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main {
+        flex: 1 1 auto;
+    }
+
+    @keyframes move_wave {
+        0% {
+            transform: translateX(0) translateZ(0) scaleY(1)
+        }
+        50% {
+            transform: translateX(-25%) translateZ(0) scaleY(0.55)
+        }
+        100% {
+            transform: translateX(-50%) translateZ(0) scaleY(1)
+        }
+    }
+
+    .waveWrapper {
+        overflow: hidden;
+        position: absolute;
+        z-index: -10;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+    }
+
+    .waveWrapperInner {
+        position: absolute;
+        width: 100%;
+        overflow: hidden;
+        height: 100%;
+        bottom: -1px;
+        background-image: linear-gradient(to top, #9bb1ff 20%, #788bff 80%);
+    }
+
+    .bgTop {
+        z-index: 15;
+        opacity: 0.5;
+    }
+
+    .bgMiddle {
+        z-index: 10;
+        opacity: 0.75;
+    }
+
+    .bgBottom {
+        z-index: 5;
+    }
+
+    .wave {
+        position: absolute;
+        z-index: -10;
+        left: 0;
+        width: 200%;
+        height: 100%;
+        background-repeat: repeat no-repeat;
+        background-position: 0 bottom;
+        transform-origin: center bottom;
+    }
+
+    .waveTop {
+        background-size: 50% 100px;
+    }
+
+    .waveAnimation .waveTop {
+      animation: move-wave 3s;
+       -webkit-animation: move-wave 3s;
+       -webkit-animation-delay: 1s;
+       animation-delay: 1s;
+    }
+
+    .waveMiddle {
+        background-size: 50% 120px;
+    }
+
+    .waveAnimation .waveMiddle {
+        animation: move_wave 10s linear infinite;
+    }
+
+    .waveBottom {
+        background-size: 50% 100px;
+    }
+
+    .waveAnimation .waveBottom {
+        animation: move_wave 15s linear infinite;
+    }
+
+
+    .form_auth_section {
+        max-width: 1980px;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form__content-head {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        background: #fff;
+        background: url("../pictures/mirea_maskot.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    /* .form__content-header {
+        font-weight: 900;
+        font-size: 32px;
+        line-height: 10px;
+        margin-top: 30px;
+    } */
+
+    /* .form__content-subheader {
+        color: rgba(255, 255, 255, 0.9);
+    } */
+
+    .form__content {
+        margin: 0 20px;
+        min-width: 300px;
+        max-width: 400px;
+        min-height: 550px;
+        max-height: 800px;
+        padding: 45px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #fff;
+
+        background: #5465ff;
+        border-radius: 10px;
+        box-shadow: 10px -5px 25px rgba(0, 0, 0, 0.2);
+
+    }
+
+    .form__content-head {
+        text-align: center;
+    }
+
+    .form__item {
+        display: flex;
+        flex-direction: column;
+
+        padding: 10px;
+    }
+
+    .form__text {
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+
+        color: rgba(255, 255, 255, 0.9);
+
+    }
+
+    .form__text i {
+        margin: 0 5px 0 0;
+    }
+
+    .bx-envelope {
+        padding: 1px 0 0 0;
+    }
+
+    .input__field {
+        width: 300px;
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #bdbdbd;
+        font-family: inherit;
+    }
+
+    .input__field:focus {
+        outline: rgba(255, 255, 255, 0.3) solid;
+    }
+
+    .remember_checkbox {
+        margin-top: 15px;
+        position: relative;
+        left: -3px;
+    }
+
+    .remember {
+        position: relative;
+        left: -3px;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .button {
+        margin: 25px 0 0 0;
+        padding: 10px;
+        border-radius: 4px;
+        border: none;
+        background: #788bff;
+        color: #fff;
+
+        transition: all 0.3s ease;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 18px;
+        font-family: inherit;
+
+    }
+
+    .button:hover {
+        background: #9bb1ffdb;
+    }
+
+    .where_account {
+        text-align: center;
+        color: #fff;
+        margin-top: 20px;
+    }
+
+
+    /* https://coolors.co/e5d9f2-f5efff-cdc1ff-a594f9-7371fc     */
+
+
+    .checkbox_container {
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .useful_links {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .form__secret {
+        display: none;
+    }
+
+    @media screen and (max-width: 780px) {
+
+        .form__content-head-registration {
+            width: 125px;
+            height: 125px;
+        }git@github.com:LYAKAKOY/LMS.git
+
+        .input__field {
+            width: 220px;
+        }
+
+        .form__content-registration {
+            height: 650px;
+            margin: 50px 0;
+        }
+
+
+
+
+    }
+
+
+    @media screen and (max-width: 420px) {
+        .form__content {
+            min-height: 200px;
+        }
+
+        .form__content-head {
+            width: 125px;
+            height: 125px;
+        }
+
+        .form__content-head-registration {
+            width: 100px;
+            height: 100px;
+        }
+
+        .input__field {
+            width: 220px;
+        }
+
+        .form__content-registration {
+            height: 620px;
+            margin: 50px 0;
+        }
+
+
+
+
+    }
