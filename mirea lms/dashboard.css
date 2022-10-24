@@ -206,7 +206,7 @@ h1, h2, h3, h4, h5, h6 {
 .lections {
     margin-top: 40px;
     max-width: 300px;
-    height: calc(100vh - 120px);
+    height: 250px;
 }
 
 .lection__items {
@@ -225,9 +225,19 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px;
     margin: 4px 0 0 0;
     transition: 0.2s ease;
+    text-decoration: none;
 
     display: flex;
     align-items: center;
+}
+
+.lection__item span {
+    display: flex;
+    align-items: center;
+}
+
+.lection__item span i {
+    margin: 0 5px 0 0;
 }
 
 .lection__item:hover {
@@ -246,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 40px;
     position: absolute;
     width: 1200px;
-    min-height: 200px;
+    min-height: 210px;
     max-height: 400px;
     right: 0;
     top: 0;
@@ -257,13 +267,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .intro__content {
+    display: flex;
+    align-items: center;
     position: relative;
-    padding: 30px;  
+    padding: 0 60px;  
+    min-height: 210px;
+    max-height: 400px;
 }
 
-.intro__text {
-    width: calc(1200px - 200px);
-}
+/* .intro__text {
+    width: calc(1380px - 200px);
+} */
 
 .intro__title {
     font-size: 32px;
@@ -271,18 +285,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .intro__subtitle {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 24px;
+    color: rgba(255, 255, 255, 1);
 }
 
 .intro__img-profile {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 100%;
 
     position: absolute;
-    right: 30px;
-    top: 30px;
+    top: 0; bottom: 0; right: 60px;
+    margin: auto;
     object-fit: cover;
     object-position: center;
 }
@@ -292,3 +306,139 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     top: 0;
 } */
+
+
+.main_page {
+    width: 1200px;
+    left: calc(1600px - 1200px);
+    display: flex;
+    position: absolute;
+    /* align-items: center; */
+    /* justify-content: space-evenly; */
+}
+
+
+.continue {
+    height: 500px;
+    width: 500px;
+    position: relative;
+    /* position: absolute; */
+    /* top: 0; */
+    /* top: 0; */
+    /* margin: auto; */
+}
+
+.continue__content {
+    position: absolute;
+    /* right: 0; */
+    left: 0;
+}
+
+.main_page-title {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+}
+
+.continue__items {
+    display: flex;
+    flex-direction: column;
+}
+
+.continue__item-outer {
+    width: 495px;
+    height: 145px;
+    background: #788bff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.continue__item-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 480px;
+    height: 130px;
+    padding: 10px;
+    background: #788bff;
+    border-radius: 8px;
+    /* justify-content: center; */
+    position: relative;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: #fff;
+}
+
+.continue__item-inner:hover {
+    background: #e7e7e727;
+}
+
+.continue__item-title {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    font-size: 18px;
+}
+
+.continue__item-inner img {
+    width: 120px;
+    height: 100px;
+    /* border: 1px solid black; */
+    border-radius: 8px;
+    background: #6875f1;
+}
+
+.calendar {
+    width: 650px;
+    height: 500px;
+    position: absolute;
+    right: 0;
+}
+
+.calendar__item i {
+    font-size: 48px;
+}
+
+.calendar__item-title {
+    font-size: 24px;
+}
+
+.calendar__content {
+
+}
+
+.calendar__items {
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: #788bff; 
+    color: #fff;
+    border-radius: 8px;
+    height: 300px;
+    position: relative;
+    padding-top: 50px;
+}
+
+.calendar-choose_courses {
+    padding: 10px 35px;
+    text-decoration: none;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    position: absolute;
+    bottom: 50px;
+    right: 200px;
+    left: 200px;
+    margin: 0 auto;
+    transition: all .2s ease;
+}
+
+.calendar-choose_courses:hover {
+    background: #fff;
+    color: black;
+}
