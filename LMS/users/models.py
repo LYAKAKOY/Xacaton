@@ -2,10 +2,11 @@ from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 
 class UserData(models.Model):
-    """Данные зарегестрированного пользователя"""
+    """Данные зарегистрированного пользователя"""
 
     firstname = models.CharField('Имя пользователя', max_length=255, default='')
     lastname = models.CharField('Фамилия пользователя', max_length=255, default='')
