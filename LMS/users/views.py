@@ -1,11 +1,19 @@
 from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetConfirmView, PasswordResetDoneView, \
     PasswordResetCompleteView
 from django.views.generic import CreateView
+from rest_framework import generics
+from django.contrib.auth.models import User
 from .forms import RegisterForm, AuntificationUserForm
 from django.urls import reverse_lazy
 
-
 # Create your views here.
+from .serializers import UserSerializerReg
+
+
+class RegistrationUserApiView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializerReg
+
 
 class RegistrationUserView(CreateView):
     """Регистрация пользователя"""
