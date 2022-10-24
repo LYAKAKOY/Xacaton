@@ -147,7 +147,7 @@
 
         .form__content {
             margin: 0 20px;
-            min-width: 300px;
+            /* min-width: 300px; */
             max-width: 400px;
             min-height: 550px;
             max-height: 800px;
@@ -165,6 +165,11 @@
 
         .form__content-forgot {
             min-height: 440px;
+        }
+
+        .form__content-newpassword {
+            min-height: 400px;
+            padding: 30px 45px;
         }
 
         .form__content-head {
@@ -362,6 +367,18 @@
             cursor: pointer;
         }
 
+        @media screen and (max-width: 1300px) {
+            .notification {
+                position: absolute;
+                right: 0;
+                left: 0;
+                bottom: 20px;
+                margin: 0 auto;
+
+                max-width: 400px;
+            }
+        }
+
         @media screen and (max-width: 780px) {
 
             .form__content-head-registration {
@@ -369,8 +386,26 @@
                 height: 125px;
             }
 
+            .form__content {
+                max-width: 300px;
+            }
+
+
             .input__field {
                 width: 220px;
+            }
+
+            .notification {
+                max-width: 300px;
+                bottom: 10px;
+            }
+
+            .notification__text {
+                font-size: 14px;
+            }
+
+            .notification__corner {
+                width: 17px;
             }
 
             .form__content-registration {
@@ -385,9 +420,9 @@
 
 
         @media screen and (max-width: 420px) {
-            .form__content {
-                min-height: 200px;
-            }
+            /* .form__content {
+                min-height: 300px;
+            } */
 
             .form__content-head {
                 width: 125px;
@@ -399,16 +434,16 @@
                 height: 100px;
             }
 
-            .input__field {
+            /* .input__field {
                 width: 220px;
-            }
+            } */
 
             .form__content-registration {
                 height: 620px;
                 margin: 50px 0;
             }
 
-
-
-            
+            .notification {
+                bottom: 20px;
+            }      
         }
