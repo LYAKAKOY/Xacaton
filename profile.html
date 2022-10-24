@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="header__container">
+                <div class="header__item">
+                    <!-- <img src="pictures/mirea_maskot_computer.png" alt=""> -->
+                    <div><a href="#" class="item__logo">совушкин</a></div>
+                </div>  
+                <ul class="items-list">
+                    <li><a href="dashboard.html" class="item__link"><i class='bx bx-user'></i> моя страница</a></li>
+                    <li><a href="#" class="item__link" target="_blank"><i class='bx bx-book-content'></i> все курсы</a></li>
+                    <li><a href="#" class="item__link"><i class='bx bx-chalkboard'></i> преподаватели</a></li>
+                    <li><a href="#" class="item__link"><img src="pictures/example.jpg" alt=""></a></li>
+                </ul>
+            
+                <!-- <div class="profile">
+                    <div class="profile__container">
+                        <a href="#" class="item__link item__link-profile"><i class='bx bx-user'></i> Профиль</a>
+                    </div>
+                </div>  -->
+                <div class="burger">
+                    <div class="line1"></div>   
+                    <div class="line2"></div>   
+                    <div class="line3"></div>   
+                </div>
+            </div>
+        </div>
+        <main class="main">
+            <section class="profile">
+                <h1 class="profile-title">профиль</h1>
+                <div class="profile__content">
+                    <div class="profile__item">
+                        <div class="profile__change">
+                            <a href=""><i class='bx bx-pencil' ></i> </a>
+                        </div>
+                        <img class="profile__img" src="pictures/example.jpg" alt="">
+                        <div class="profile__name">@kolhozniypank</div>
+                        <div class="form__item">
+                            <div class="form__item-container">
+                                <label class="form__text">
+                                    <i class='bx bx-envelope'></i> Почта</label>
+                                <input type="login" class="input__field" name="auth_login" value="ilovezhenya228@gmail.com" readonly >
+                            </div>
+                            <div class="form__item-container">
+                                <label class="form__text"><i class='bx bx-user' ></i> Имя</label>
+                                <input type="login" class="input__field" name="auth_login" value="Евгений" readonly >
+                            </div>
+                            <div class="form__item-container">
+                                <label class="form__text"><i class='bx bx-user-pin'></i> Фамилия</label>
+                                <input type="login" class="input__field" name="auth_login" value="Соловьев" readonly >
+                            </div>
+                            <!-- <button class="form__auth-button button" type="submit" name="form_auth_submit">Редактировать</button> -->
+                        </div> 
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div class="waveWrapper waveAnimation">
+            <div class="waveWrapperInner bgTop">
+                <div class="wave waveTop" style="background-image: url('wave/wave-top.png')"></div>
+            </div>
+            <div class="waveWrapperInner bgMiddle">
+                <div class="wave waveMiddle" style="background-image: url('wave/wave-mid.png')"></div>
+            </div>
+            <div class="waveWrapperInner bgBottom">
+                <div class="wave waveBottom" style="background-image: url('wave/wave-bot.png')"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

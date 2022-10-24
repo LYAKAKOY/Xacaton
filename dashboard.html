@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="header__container">
+                <div class="header__item">
+                    <!-- <img src="pictures/mirea_maskot_computer.png" alt=""> -->
+                    <div><a href="#" class="item__logo">совушкин</a></div>
+                </div>  
+                <ul class="items-list">
+                    <li><a href="#" class="item__link"><i class='bx bx-user'></i> моя страница</a></li>
+                    <li><a href="#" class="item__link" target="_blank"><i class='bx bx-book-content'></i> все курсы</a></li>
+                    <li><a href="#" class="item__link"><i class='bx bx-chalkboard'></i> преподаватели</a></li>
+                    <li><a href="profile.html" class="item__link"><img src="pictures/example.jpg" alt=""></a></li>
+                </ul>
+            
+                <!-- <div class="profile">
+                    <div class="profile__container">
+                        <a href="#" class="item__link item__link-profile"><i class='bx bx-user'></i> Профиль</a>
+                    </div>
+                </div>  -->
+                <div class="burger">
+                    <div class="line1"></div>   
+                    <div class="line2"></div>   
+                    <div class="line3"></div>   
+                </div>
+            </div>
+        </div>
+        <main class="main">
+            <section class="lections">
+                <div class="lection__items">
+                    <a class="lection__item lection__item-main" href="#">
+                        <span class="lection__name"><i class='bx bx-home' ></i> главная</span>
+                    </a>
+
+                    <a class="lection__item lection__item-schedule" href="#">
+                        <span class="lection__name"><i class='bx bx-receipt' ></i> расписание</span>
+                    </a>
+
+                    <a class="lection__item lection__item-courses" href="#">
+                        <span class="lection__name"><i class='bx bx-folder' ></i> мои курсы</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="intro">
+                <div class="intro__content">
+                    <div class="intro__text">
+                        <h1 class="intro__title">привет, Евгений!</h1>
+                        <div class="intro__subtitle">сегодня 23 октября</div>
+                    </div>
+                    <img class = "intro__img-profile" src="pictures/example.jpg" alt="">
+                </div>
+            </section>
+            
+            <section class="main_page">
+                <section class="continue">
+                    <div class="continue__content">
+                        <div class="continue__text">
+                            <h1 class="continue__content-title main_page-title">продолжить учиться</h1>
+                            <a href="" class="courses"><i class='bx bx-folder' ></i> мои курсы</a>
+                        </div>
+                        <div class="continue__items">
+                            <div class="continue__item-outer">
+                                <a class="continue__item-inner" href="#">
+                                    <img src="pictures/mirea_courses.png" alt="">
+                                    <h1 class="continue__item-title">
+                                        Основы веб-программирования
+                                    </h1>
+                                </a>
+                            </div>
+
+                            <div class="continue__item-outer">
+                                <a class="continue__item-inner" href="#">
+                                    <img src="pictures/mirea_courses.png" alt="">
+                                    <h1 class="continue__item-title">
+                                        Основы веб-программирования
+                                    </h1>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="calendar">
+                    <div class="calendar__content">
+                        <div class="calendar__text">
+                            <h1 class="calendar__content-title main_page-title">ближайшие занятия</h1>
+                            <a href="" class="courses"><i class='bx bx-receipt' ></i> расписание</a>
+                        </div>
+                        <div class="calendar__items">
+                            <div class="calendar__item" href="#">
+                                <i class='bx bx-calendar'></i>
+                                <h1 class="calendar__item-title">
+                                    
+                                    пока что нет <br>ближайших занятий
+                                </h1>
+                                <a href="#" class="calendar-choose_courses">выбрать курсы</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
