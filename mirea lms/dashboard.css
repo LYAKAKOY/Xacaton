@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
 body, html {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -5,6 +7,7 @@ body, html {
     font-size: 15px;
     line-height: 1.6;
     color: #0e0e0e;
+    background: #bfd6ff1e;
     height: 100%;
     max-width: 100%;
     overflow-x: hidden;
@@ -263,7 +266,7 @@ h1, h2, h3, h4, h5, h6 {
 
     border-radius: 12px;
     color: #fff;
-    background-image: linear-gradient(to right bottom, #9bb1ff 40%, #bfd7ff 60%);
+    background-image: linear-gradient(to right top, #788bff 10%, #788bff 40%, #87bfff 60%);
 }
 
 .intro__content {
@@ -347,7 +350,7 @@ h1, h2, h3, h4, h5, h6 {
 .continue__item-outer {
     width: 495px;
     height: 145px;
-    background: #788bff;
+    background: #9bb1ff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -362,7 +365,6 @@ h1, h2, h3, h4, h5, h6 {
     width: 480px;
     height: 130px;
     padding: 10px;
-    background: #788bff;
     border-radius: 8px;
     /* justify-content: center; */
     position: relative;
@@ -387,7 +389,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 100px;
     /* border: 1px solid black; */
     border-radius: 8px;
-    background: #6875f1;
+    background: #7d9aff97;
 }
 
 .calendar {
@@ -414,7 +416,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    background: #788bff; 
+    background: #9bb1ff; 
     color: #fff;
     border-radius: 8px;
     height: 300px;
