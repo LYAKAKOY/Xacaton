@@ -1,18 +1,39 @@
 from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetConfirmView, PasswordResetDoneView, \
     PasswordResetCompleteView
+from django.shortcuts import resolve_url
 from django.views.generic import CreateView
-from rest_framework import generics
+from rest_framework import generics, status
 from django.contrib.auth.models import User
+from rest_framework.generics import CreateAPIView
+from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
+
 from .forms import RegisterForm, AuntificationUserForm
 from django.urls import reverse_lazy
 
 # Create your views here.
-from .serializers import UserSerializerReg
+from .serializers import UserRegisterSerializer
 
 
-class RegistrationUserApiView(generics.CreateAPIView):
+# class RegistrationUserApiView(generics.CreateAPIView):
+#     queryset = User.objects.all()
+#     serializer_class = UserSerializerReg
+
+class RegisterUserApiView(CreateAPIView):
     queryset = User.objects.all()
-    serializer_class = UserSerializerReg
+    serializer_class = UserRegisterSerializer
+    permission_classes = [AllowAny]
+
+    def post(self, request, *args, **kwargs):
+        serializer = UserRegisterSerializer(data=request.data)
+        data = {}
+        if serializer.is_valid():
+            serializer.save()
+            data['response'] = True
+            return Response(data, status=status.HTTP_200_OK)
+        else:
+            data = serializer.errors
+            return Response(data)
 
 
 class RegistrationUserView(CreateView):

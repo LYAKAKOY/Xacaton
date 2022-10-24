@@ -1,7 +1,6 @@
-from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView
-from django.urls import path
+from django.urls import path, include
 from .views import RegistrationUserView, AuntificationUserView, ChangePasswordUser, PasswordUserDone, \
-    ChangePasswordUserConfirm, ChangePasswordUserComplete, RegistrationUserApiView
+    ChangePasswordUserConfirm, ChangePasswordUserComplete, RegisterUserApiView
 
 urlpatterns = [
     path('reg/', RegistrationUserView.as_view(), name='reg'),
@@ -11,6 +10,7 @@ urlpatterns = [
          name='password_reset_confirm'),
     path('password_reset_done/', PasswordUserDone.as_view(), name='password_reset_done'),
     path('password_reset_complete/', ChangePasswordUserComplete.as_view(), name='password_reset_complete'),
-    path('api/v1/reg_user/', RegistrationUserApiView.as_view(), name='reg_user_api')
+    path('api/v1/reg_user/', RegisterUserApiView.as_view(), name='reg_user_api'),
+    path('api/v1/drf-auth/', include('rest_framework.urls'))
 
 ]
