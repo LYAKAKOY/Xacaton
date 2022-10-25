@@ -444,3 +444,10 @@ h1, h2, h3, h4, h5, h6 {
     background: #fff;
     color: black;
 }
+
+.lecture_date {
+    background-color: #fc5203;
+    color: #fff;
+    border: #000 1px solid;
+    text-decoration: none;
+}

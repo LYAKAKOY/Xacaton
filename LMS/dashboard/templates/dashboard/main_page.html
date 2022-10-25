@@ -63,21 +63,35 @@
                 </div>
             </section>
 
+
             <section class="main_page">
                 <section class="continue">
                     <div class="continue__content">
                         <h1 class="continue__content-title main_page-title">продолжить учиться</h1>
                         <div class="continue__items">
                             {% for course in courses %}
-                            <div class="continue__item-outer">
-                                <a class="continue__item-inner" href="#">
-                                    <img src="../../../users/static/users/pictures/mirea_maskot.jpg" alt="">
+                            <a href="{% url 'course' course.slug %}"><div class="continue__item-outer">
+                                <div class="continue__item-inner" href="#">
+
                                     <h1 class="continue__item-title">
                                         {{course.name_course}}
                                     </h1>
-                                </a>
-                            </div>
+
+                            </div></a>
                             {% endfor %}
+                            <nav class="list-pages">
+                                <ul>
+                                    {% for p in paginator.page_range %}
+                                        {% if page_obj.number == p %}
+                                            <li class="page-num page-num-selected">{{ p }}</li>
+                                        {% else %}
+                                            <li class="page-num">
+                                            <a href="?page={{ p }}">{{ p }}</a>
+                                            </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </nav>
 
                         </div>
                     </div>
@@ -101,5 +115,6 @@
             </section>
         </main>
     </div>
+    {{ calendar|safe }}
 </body>
 </html>
