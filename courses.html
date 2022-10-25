@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои курсы</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="header__container">
+                <div class="header__item">
+                    <!-- <img src="pictures/mirea_maskot_computer.png" alt=""> -->
+                    <div><a href="dashboard.html" class="item__logo">гриня</a></div>
+                </div>  
+                <ul class="items-list">
+                    <li><a href="dashboard.html" class="item__link"><i class='bx bx-user'></i> моя страница</a></li>
+                    <li><a href="#" class="item__link" target="_blank"><i class='bx bx-book-content'></i> все курсы</a></li>
+                    <li><a href="#" class="item__link"><i class='bx bx-chalkboard'></i> преподаватели</a></li>
+                    <li><a href="profile.html" class="item__link"><img src="pictures/example.jpg" alt=""></a></li>
+                </ul>
+            
+                <!-- <div class="profile">
+                    <div class="profile__container">
+                        <a href="#" class="item__link item__link-profile"><i class='bx bx-user'></i> Профиль</a>
+                    </div>
+                </div>  -->
+                <div class="burger">
+                    <div class="line1"></div>   
+                    <div class="line2"></div>   
+                    <div class="line3"></div>   
+                </div>
+            </div>
+        </div>
+        <main class="main">
+            <section class="lections">
+                <div class="lection__items">
+                    <a class="lection__item lection__item-main" href="#">
+                        <span class="lection__name"><i class='bx bx-home' ></i> главная</span>
+                    </a>
+
+                    <a class="lection__item lection__item-schedule" href="#">
+                        <span class="lection__name"><i class='bx bx-receipt' ></i> расписание</span>
+                    </a>
+
+                    <a class="lection__item lection__item-courses" href="#">
+                        <span class="lection__name"><i class='bx bx-folder' ></i> мои курсы</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="courses">
+                <div class="courses__head">
+                    <div class="courses__title">мои курсы</div>
+                    <span class="courses__count">12</span>
+                </div>
+                <div class="courses__content">
+                    <div class="courses__item-outer">
+                        <a class="courses__item-inner" href="course.html">
+                            <img src="pictures/mirea_courses.png" alt="">
+                            <div class="courses__item-text">
+                                <h1 class="courses__item-title">Основы веб-программирования</h1>
+                                <p class="courses__item-subtitle">преподаватель: А. С. Пушкин</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="courses__item-outer">
+                        <a class="courses__item-inner" href="course.html">
+                            <img src="pictures/mirea_courses2.png" alt="">
+                            <div class="courses__item-text">
+                                <h1 class="courses__item-title">Теория международных отношений</h1>
+                                <p class="courses__item-subtitle">преподаватель: А. С. Пушкин</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="courses__item-outer">
+                        <a class="courses__item-inner" href="course.html">
+                            <img src="pictures/mirea_courses3.png" alt="">
+                            <div class="courses__item-text">
+                                <h1 class="courses__item-title">География для самых маленьких</h1>
+                                <p class="courses__item-subtitle">преподаватель: А. С. Пушкин</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+</body>
+</html>

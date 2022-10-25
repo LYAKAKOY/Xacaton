@@ -63,7 +63,6 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     overflow: hidden;
     height: 100%;
-    bottom: -1px;
     background-image: linear-gradient(to top, #9bb1ff 20%, #788bff 80%);
 }
 
@@ -129,6 +128,8 @@ h1, h2, h3, h4, h5, h6 {
     width: 150px;
     height: 150px;
     border-radius: 100%;
+    background: #fff;
+    background: url(pictures/mirea_maskot.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -519,14 +520,4 @@ h1, h2, h3, h4, h5, h6 {
         color: #fff;
     }
     
-}
-
-
-.griffon {
-    width: 150px;
-    height: 150px;
-    border-radius: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
