@@ -9,6 +9,9 @@
 </head>
 <body>
     {{course.name_course}}
+    {% for l in lectures %}
+        {{ l.name_lecture }}
+    {% endfor %}
 
 </body>
 </html>

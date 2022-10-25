@@ -1,12 +1,12 @@
 import datetime
 import re
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView
 from .models import Course, Lecture
 from calendar import HTMLCalendar
 
 
-class CoursesView(ListView):
+class CoursesView(LoginRequiredMixin, ListView):
     paginate_by = 3
     model = Course
     template_name = "dashboard/main_page.html"
@@ -32,14 +32,19 @@ class CoursesView(ListView):
         return context
 
 
-class CourseView(DetailView):
+class CourseView(LoginRequiredMixin, DetailView):
     model = Course
     template_name = 'dashboard/course.html'
     slug_url_kwarg = 'slug_course'
     context_object_name = 'course'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        print(context['course'])
+        context['lectures'] = Lecture.objects.filter(course=context['course'])
+        return context
 
-class LectureView(DetailView):
+class LectureView(LoginRequiredMixin, DetailView):
     model = Lecture
     template_name = 'dashboard/lecture.html'
     slug_url_kwarg = 'slug_lecture'
