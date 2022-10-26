@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,12 +55,14 @@
                 <div class="allcourses__content">
                   {% for course in courses %}
                   <div class="allcourses__item">
-                        <img src="pictures/prepod.jpg" alt="">
+                        <img src="{{course.picture.url}}" alt="">
                         <div class="allcourses__text">
                             <div class="allcourses__item-title">
-                                course.name_course
+                                {{ course.name_course }}
                             </div>
-                            <p class="allcourses__prepod">course.teachers.all</p>
+                            {% for teach in course.teacher.all %}
+                            <p class="allcourses__prepod">{{ teach }}</p>
+                            {% endfor %}
                             <div class="allcourses__button"><i class='bx bx-exit'></i> записаться</div>
                         </div>
                     </div>

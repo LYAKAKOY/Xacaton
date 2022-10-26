@@ -10,8 +10,23 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+    <div class="wrapper">
+        <main class="main">
+            {% block content %}
+            {% endblock %}
+            <div class="waveWrapper waveAnimation">
+                <div class="waveWrapperInner bgTop">
+                    <div class="wave waveTop" style="background-image: url('../../static/users/pictures/wave-top.png')"></div>
+                </div>
+                <div class="waveWrapperInner bgMiddle">
+                    <div class="wave waveMiddle" style="background-image: url('../../static/users/pictures/wave-mid.png')"></div>
+                </div>
+                <div class="waveWrapperInner bgBottom">
+                    <div class="wave waveBottom" style="background-image: url('../../static/users/pictures/wave-bot.png')"></div>
+                </div>
+            </div>
+       </main>
+    </div>
     <script src="{% static 'users/js/main.js' %}"></script>
 </body>
 </html>

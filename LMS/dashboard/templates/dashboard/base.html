@@ -1,10 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'dashboard/css/dashboard.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-$END$
+<div class="wrapper">
+    <div class="header">
+            <div class="header__container">
+                <div class="header__item">
+                    <div><a href="{% url 'dashboard' %}" class="item__logo">совушкин</a></div>
+                </div>
+                <ul class="items-list">
+                    <li><a href="{% url 'all_courses' %}" class="item__link" target="_blank"><i class='bx bx-book-content'></i> все курсы</a></li>
+                    <li><a href="#" class="item__link"><i class='bx bx-chalkboard'></i> преподаватели</a></li>
+                    <li><a href="{% url 'profile' %}" class="item__link" ><img src="{{ user.userdata.picture.url }}" alt=""></a></li>
+                </ul>
+
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </div>
+
+            {% block content %}
+            {% endblock %}
+        </div>
+</div>
+    <script src="{% static 'dashboard/js/main.js' %}"></script>
 </body>
 </html>

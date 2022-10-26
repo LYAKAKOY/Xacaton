@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user.username }}</title>
+    <link rel="stylesheet" href="{% static 'dashboard/css/dashboard.css' %} ">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="header__container">
+                <div class="header__item">
+                    <!-- <img src="pictures/mirea_maskot_computer.png" alt=""> -->
+                    <div><a href="{% url 'dashboard' %}" class="item__logo">совушкин</a></div>
+                </div>
+                <ul class="items-list">
+                    <li><a href="{% url 'all_courses' %}" class="item__link" target="_blank"><i class='bx bx-book-content'></i> все курсы</a></li>
+                    <li><a href="#" class="item__link"><i class='bx bx-chalkboard'></i> преподаватели</a></li>
+                    <li><a href="#" class="item__link" id="dropdownlink"><img src="{{ user.userdata.picture.url }}" alt="" id="dropdownlink"></a></li>
+                    <li class="item-dropdown">
+                        <a href="#" class="item__link">мой профиль</a>
+                        <a href="{% url 'exit' %}" class="item__link">выйти</a>
+                    </li>
+                </ul>
+
+                <!-- <div class="profile">
+                    <div class="profile__container">
+                        <a href="#" class="item__link item__link-profile"><i class='bx bx-user'></i> Профиль</a>
+                    </div>
+                </div>  -->
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </div>
+        </div>
+        <main class="main">
+            <section class="profile">
+                <h1 class="profile-title">профиль</h1>
+                <div class="profile__content">
+                    <div class="profile__item">
+                        <div class="profile__change">
+                            <a href=""><i class='bx bx-pencil' ></i> </a>
+                        </div>
+                        <img class="profile__img" src="{{ user.userdata.picture.url }}" alt="">
+                        <div class="profile__name">@{{ user.username }}</div>
+                        {% if user.is_staff %}
+                            <div class="profile__profession">Преподаватель</div>
+                        {% else %}
+                            <div class="profile__profession">Студент</div>
+                        {% endif %}
+                        <div class="form__item">
+                            <div class="form__item-container">
+                                <label class="form__text">
+                                    <i class='bx bx-envelope'></i> {{ use.email }}</label>
+                                <input type="login" class="input__field" name="auth_login" value="{{user.email}}" readonly >
+                            </div>
+                            <div class="form__item-container">
+                                <label class="form__text"><i class='bx bx-user' ></i> Имя</label>
+                                <input type="login" class="input__field" name="auth_login" value="{{ user.first_name }}" readonly >
+                            </div>
+                            <div class="form__item-container">
+                                <label class="form__text"><i class='bx bx-user-pin'></i> Фамилия</label>
+                                <input type="login" class="input__field" name="auth_login" value="{{ user.last_name }}" readonly >
+                            </div>
+                            <!-- <button class="form__auth-button button" type="submit" name="form_auth_submit">Редактировать</button> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div class="wrapper">
+        <main class="main">
+            {% block content %}
+            {% endblock %}
+            <div class="waveWrapper waveAnimation">
+                <div class="waveWrapperInner bgTop">
+                    <div class="wave waveTop" style="background-image: url('../../static/dashboard/pictures/wave-top.png')"></div>
+                </div>
+                <div class="waveWrapperInner bgMiddle">
+                    <div class="wave waveMiddle" style="background-image: url('../../static/dashboard/pictures/wave-mid.png')"></div>
+                </div>
+                <div class="waveWrapperInner bgBottom">
+                    <div class="wave waveBottom" style="background-image: url('../../static/dashboard/pictures/wave-bot.png')"></div>
+                </div>
+            </div>
+       </main>
+    </div>
+    </div>
+
+    <script src="{% static 'dashboard/js/main.js' %}"></script>
+</body>
+</html>

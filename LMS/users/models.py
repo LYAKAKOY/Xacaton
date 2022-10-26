@@ -7,9 +7,8 @@ from django.contrib.auth.models import User
 class UserData(models.Model):
     """Данные зарегистрированного пользователя"""
 
-    firstname = models.CharField('Имя пользователя', max_length=255, default='')
-    lastname = models.CharField('Фамилия пользователя', max_length=255, default='')
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    picture = models.ImageField(upload_to='pictures', default='pictures/mirea_maskot.png')
 
     def __str__(self):
         return self.user.username

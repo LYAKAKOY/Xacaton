@@ -1,17 +1,38 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link type="text/css" rel="stylesheet" href="{% static 'dashboard/css/dashboard.css' %}">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
-    {{course.name_course}}
-    {% for l in lectures %}
-        {{ l.name_lecture }}
-    {% endfor %}
+{% extends 'dashboard/base.html' %}
+{% block title %} Курс {{ course.name_course }} {% endblock %}
+{% block content %}
+        <main class="main">
+            <section class="lections">
+                <div class="lection__items">
+                    <a class="lection__item lection__item-main" href="#">
+                        <span class="lection__name"><i class='bx bx-home' ></i> главная</span>
+                    </a>
 
-</body>
-</html>
+                    <a class="lection__item lection__item-schedule" href="myprepods.html">
+                        <span class="lection__name"><i class='bx bx-receipt' ></i> мои преподы</span>
+                    </a>
+
+                    <a class="lection__item lection__item-courses" href="#">
+                        <span class="lection__name"><i class='bx bx-folder' ></i> мои курсы</span>
+                    </a>
+                </div>
+            </section>
+
+           <section class="course">
+                <div class="course__content">
+                    <div class="course__item">
+                        <div class="course__item-img">
+                            <img src="pictures/mirea_courses.png" alt="">
+                        </div>
+                        <div class="course__item-text">
+                            <div class="course__item-title">{{ course.name_course }}</div>
+                            {% for teacher in teachers %}
+                            <div class="course__item-subtitle">преподаватель: {{ teacher }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+           </section>
+        </main>
+{% endblock %}
+

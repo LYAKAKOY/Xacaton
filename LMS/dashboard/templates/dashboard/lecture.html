@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'dashboard/base.html' %}
+{% block title %}{{ course.name_course }} {% endblock %}}
+{% block content %}
     {{lecture.name_lecture}}
-</body>
-</html>
+{% block content %}

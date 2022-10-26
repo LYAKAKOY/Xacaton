@@ -1,23 +1,26 @@
 {% extends 'users/base.html' %}
 {% block title %}Вход{% endblock %}
 {% block content %}
- <div class="wrapper">
-        <main class="main">
             <section class="form_auth_section">
                 <div class="form__content">
-                    <div class="form__content-head">
-
-                    </div>
+                    <img class="form__content-head" id="griffon" src="../../static/users/pictures/griffon/16.png" alt=">
+                    <label class="form__text wrong">{{ form.non_field_errors }}</label>
                     <form class="form__auth" action="#" method="post">
                         {% csrf_token %}
+                        <div class="form__login form__item">
+                            <label class="form__text" for="{{ form.username.id_for_label }}"><i class='bx bx-user'> </i> {{ form.username.label }} </label>
+                            {{ form.username }}
+                            <label class="form__text wrong">{{ form.username.errors }}</label>
+                            <!-- Если что-то пошло не так, то используем класс wrong. -->
+                        </div>
                         <div class="form__password form__item">
-                            {% for f in form %}
-                            <label class="form__text" for="{{ f.id_for_label }}"><i class='bx bx-lock-alt'></i> {{ f.label }}</label>
-                            {{ f }}
-                            {% endfor %}
+                            <label class="form__text" for="{{ form.password.id_for_label }}"><i class='bx bx-lock-alt' ></i> {{ form.password.label }}</label>
+                            {{ form.password }}
+                              <label class="form__text wrong">{{ form.password.errors }}</label>
+                            <!-- Если что-то пошло не так, то используем класс wrong. -->
                             <div class="checkbox_container">
-                                <input type="checkbox" class="remember_checkbox" id="remember" name="drone" value="huey" >
-                                <label for="remember" class="remember">Запомнить меня</label>
+                                {{ form.remember_me }}
+                                <label class="remember" for="{{ form.remember_me.id_for_label }}">{{ form.remember_me.label }}</label>
                             </div>
                             <button class="form__auth-button button" type="submit" name="form_auth_submit">Войти</button>
                             <div class="useful_links">
@@ -36,18 +39,4 @@
                     </div>
                 </div>
             </section>
-
-            <div class="waveWrapper waveAnimation">
-                <div class="waveWrapperInner bgTop">
-                    <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
-                </div>
-                <div class="waveWrapperInner bgMiddle">
-                    <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
-                </div>
-                <div class="waveWrapperInner bgBottom">
-                    <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
-                </div>
-              </div>
-        </main>
-    </div>
 {% endblock %}
