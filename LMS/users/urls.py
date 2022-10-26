@@ -1,10 +1,11 @@
 from django.urls import path, include
 from .views import RegistrationUserView, AuntificationUserView, ChangePasswordUser, PasswordUserDone, \
-    ChangePasswordUserConfirm, ChangePasswordUserComplete, RegisterUserApiView
+    ChangePasswordUserConfirm, ChangePasswordUserComplete, RegisterUserApiView, logout_user
 
 urlpatterns = [
-    path('reg/', RegistrationUserView.as_view(), name='reg'),
+    path('', RegistrationUserView.as_view(), name='reg'),
     path('login/', AuntificationUserView.as_view(), name='log'),
+    path('exit/', logout_user, name='exit'),
     path('pass-reset/', ChangePasswordUser.as_view(), name='pass-reset'),
     path('password_reset_confirm/<uidb64>/<token>/', ChangePasswordUserConfirm.as_view(),
          name='password_reset_confirm'),

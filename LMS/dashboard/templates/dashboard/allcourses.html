@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои курсы</title>
+    <link rel="stylesheet" href="{% static 'dashboard/css/dashboard.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="header__container">
+                <div class="header__item">
+                    <!-- <img src="pictures/mirea_maskot_computer.png" alt=""> -->
+                    <div><a href="dashboard.html" class="item__logo">совушкин</a></div>
+                </div>
+                <ul class="items-list">
+                    <li><a href="dashboard.html" class="item__link item__link-mobile"><i class='bx bx-home' ></i> главная</a></li>
+                    <li><a href="myprepods.html" class="item__link item__link-mobile"><i class='bx bx-receipt' ></i> мои преподаватели</a></li>
+                    <li><a href="courses.html" class="item__link item__link-mobile"><i class='bx bx-folder' ></i> мои курсы</a></li>
+                    <li><a href="dashboard.html" class="item__link"><i class='bx bx-user'></i> моя страница</a></li>
+                    <li><a href="allcourses.html" class="item__link" target="_blank"><i class='bx bx-book-content'></i> все курсы</a></li>
+                    <li><a href="myprepods.html" class="item__link"><i class='bx bx-chalkboard'></i> преподаватели</a></li>
+                    <li><a href="profile.html" class="item__link"><img src="pictures/example.jpg" alt=""></a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </div>
+        </div>
+        <main class="main">
+            <section class="lections">
+                <div class="lection__items">
+                    <a class="lection__item lection__item-main" href="#">
+                        <span class="lection__name"><i class='bx bx-home' ></i> главная</span>
+                    </a>
+
+                    <a class="lection__item lection__item-schedule" href="myprepods.html">
+                        <span class="lection__name"><i class='bx bx-receipt' ></i> мои преподы</span>
+                    </a>
+
+                    <a class="lection__item lection__item-courses" href="#">
+                        <span class="lection__name"><i class='bx bx-folder' ></i> мои курсы</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="allcourses">
+                <h1 class="allcourses__title">все курсы</h1>
+                <div class="allcourses__content">
+                  {% for course in courses %}
+                  <div class="allcourses__item">
+                        <img src="pictures/prepod.jpg" alt="">
+                        <div class="allcourses__text">
+                            <div class="allcourses__item-title">
+                                course.name_course
+                            </div>
+                            <p class="allcourses__prepod">course.teachers.all</p>
+                            <div class="allcourses__button"><i class='bx bx-exit'></i> записаться</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </section>
+
+
+        </main>
+    </div>
+
+    <script src="{% static 'dashboard/js/main.js' %}"></script>
+</body>
+</html>
